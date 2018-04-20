@@ -1,0 +1,2 @@
+INIT: Parsing configuration file
+Error: No dungeon selected. Exiting.

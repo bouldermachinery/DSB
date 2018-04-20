@@ -1,0 +1,48 @@
+# depslib dependency file v1.0
+1523442812 source:/root/DSB/animap.c
+	<stdio.h>
+	<allegro.h>
+	<winalleg.h>
+	"objects.h"
+	"global_data.h"
+	"uproto.h"
+	"gproto.h"
+
+1523442812 /root/DSB/objects.h
+
+1523442812 /root/DSB/global_data.h
+	"callstack.h"
+
+1523442812 /root/DSB/callstack.h
+
+1523442812 /root/DSB/uproto.h
+
+1523442812 /root/DSB/gproto.h
+
+1523442812 source:/root/DSB/blenders.c
+	<allegro.h>
+
+1523442812 source:/root/DSB/callstack.c
+	<stdio.h>
+	<stdlib.h>
+	<allegro.h>
+	<winalleg.h>
+	<signal.h>
+	"objects.h"
+	"global_data.h"
+	"defs.h"
+	"uproto.h"
+
+1523442812 /root/DSB/defs.h
+
+1523442812 source:/root/DSB/callstack_rerror.c
+	<stdio.h>
+	<stdlib.h>
+	<allegro.h>
+	<winalleg.h>
+	<signal.h>
+	"objects.h"
+	"global_data.h"
+	"defs.h"
+	"uproto.h"
+

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="DSB" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/DSB" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-I/usr/include/luajit-2.0 -I. -fpermissive -w" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/DSB" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="DSB_private.h" />
+		<Unit filename="E_res.h" />
+		<Unit filename="SFMT-params19937.h" />
+		<Unit filename="arch.h" />
+		<Unit filename="callstack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="callstack.h" />
+		<Unit filename="callstack_rerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="champions.h" />
+		<Unit filename="common.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="common_exp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="common_lua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="common_lua.h" />
+		<Unit filename="common_macros.h" />
+		<Unit filename="common_player.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="common_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="compile.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="compile.h" />
+		<Unit filename="console.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="console.h" />
+		<Unit filename="defs.h" />
+		<Unit filename="desktop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="destroy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="distort.h" />
+		<Unit filename="dsb.ini" />
+		<Unit filename="dsb_lua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dselect.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dummywin.h" />
+		<Unit filename="dungeon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="eddump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor.h" />
+		<Unit filename="editor_api.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_archreload.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_clipboard.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_clipboard.h" />
+		<Unit filename="editor_dungeon.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_find.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_floatwin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_generators.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_gui.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_gui.h" />
+		<Unit filename="editor_hwndptr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_hwndptr.h" />
+		<Unit filename="editor_itemactions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_menu.h" />
+		<Unit filename="editor_objects.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_opbys.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_party.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_pickers.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="editor_shared.h" />
+		<Unit filename="editor_stub_funcs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="emblua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="esb_lua.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="esb_lua_support.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="esb_lua_support.h" />
+		<Unit filename="export.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="file.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="filedefs.h" />
+		<Unit filename="fmod.h" />
+		<Unit filename="fullscreen.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fullscreen.h" />
+		<Unit filename="gamelock.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gamelock.h" />
+		<Unit filename="gameloop.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="gameloop.h" />
+		<Unit filename="global_data.h" />
+		<Unit filename="gproto.h" />
+		<Unit filename="interact.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="istack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="istack.h" />
+		<Unit filename="junk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="keyboard.h" />
+		<Unit filename="loadpng.h" />
+		<Unit filename="loadpng_loadpng.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lod.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lproto.h" />
+		<Unit filename="lua_constants.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lua_constants_gii.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lua_exp_funcs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="lua_objects.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="main.cpp" />
+		<Unit filename="maintain.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="memory.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="memory.h" />
+		<Unit filename="mersenne.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="monster.h" />
+		<Unit filename="movebuffer.h" />
+		<Unit filename="movequeue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mparty.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mparty.h" />
+		<Unit filename="object_actions.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="objects.h" />
+		<Unit filename="objectsdata.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="player.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rdefer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="rdefer.h" />
+		<Unit filename="render.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="render.h" />
+		<Unit filename="rhelper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sfmt-common.h" />
+		<Unit filename="sfmt-params.h" />
+		<Unit filename="sfmt.h" />
+		<Unit filename="sound.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sound.h" />
+		<Unit filename="sound_fmod.h" />
+		<Unit filename="spawnburst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="spawnburst.h" />
+		<Unit filename="systemtimer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="timer_events.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="timer_events.h" />
+		<Unit filename="todo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="trans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="trans.h" />
+		<Unit filename="uproto.h" />
+		<Unit filename="userdata.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="util.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="versioninfo.h" />
+		<Unit filename="viewscale.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="viewscale.h" />
+		<Unit filename="winalleg.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

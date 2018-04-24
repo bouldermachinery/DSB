@@ -1,3 +1,16 @@
+
+** NOTE **
+
+This is not the official version of DSB. It is the (broken) start of a LOVE port.
+
+Please refer to the official sites:
+
+http://www.ojnk.net/dm/dsb (website)
+http://www.dungeon-master.com/forum/viewtopic.php?f=53&t=26508 (forum)
+https://github.com/sparkletwist/DSB (C source)
+
+Thanks!
+
 *** DUNGEON STRIKES BACK ***
 
 Dungeon Strikes Back (henceforth DSB) is a heavily Lua-powered and quite scriptable

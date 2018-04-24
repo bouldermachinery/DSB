@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include <fmod.h>
 #include "objects.h"
 #include "global_data.h"

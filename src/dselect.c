@@ -1,5 +1,4 @@
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include <objbase.h>
 #include <shlobj.h>
 #include "global_data.h"

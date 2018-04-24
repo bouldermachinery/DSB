@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include <signal.h>
 #include "versioninfo.h"
 #include "gameloop.h"

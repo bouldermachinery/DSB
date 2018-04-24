@@ -1,5 +1,5 @@
 
-#ifndef WIN32
+#if (defined __linux__) || (defined  __MINGW32__)
 typedef int FMOD_SOUND;
 typedef int FMOD_CHANNEL;
 typedef int FMOD_SYSTEM;

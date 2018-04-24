@@ -714,6 +714,7 @@ end
 ----------------
 
 function file_exists(name)
+   print("EXISTS: " .. name)
    -- local f=io.open(name,"r")
    local f=love.filesystem.exists(name)
    -- if f~=nil then io.close(f) return true else return false end
@@ -721,15 +722,28 @@ function file_exists(name)
 end
 
 
-function find_path(name,ext)
+function find_path(name, ext)
    local name = string.lower(name)
    local path = "data/" .. name .. "." .. ext
    if file_exists(path) then
 	  return path
    end
    path = dungeon .. "/" .. name .. "." .. ext
+   print("checking " .. path)
    if file_exists(path) then
 	  return path
+   end
+end
+
+function find_path_noext(name)
+   if file_exists("data/" .. name) then
+	  return "data/" .. name
+   elseif file_exists("data/" .. string.lower(name)) then
+	  return "data/" .. string.lower(name)
+   elseif file_exists(dungeon .. "/" .. name) then
+	  return dungeon .. "/" .. name
+   elseif file_exists(dungeon .. "/" .. string.lower(name)) then
+	  return dungeon .. "/" .. string.lower(name)	  
    end
 end
 
@@ -797,7 +811,19 @@ end
 -- Same as above but with subdirectories. Example: "path/to/actual/file.ext"
 -- returns: bitmap
 function dsb_get_bitmap2(name, relative_path)
-   return dsb_get_bitmap1(name)
+   local path = find_path_noext(relative_path)
+
+   print("GOT: " .. path)
+   local image = load_image(path)
+   local canvas = love.graphics.newCanvas(image:getWidth(), image:getHeight())
+   love.graphics.setCanvas(canvas)
+   love.graphics.draw(image)
+   love.graphics.setCanvas()
+
+   bitmap = {id = bitmap_id, image = canvas, raw = image}
+   bitmap_id = bitmap_id + 1
+
+   return bitmap
 end
 
 
@@ -1570,7 +1596,7 @@ function draw_instance(instance, x, y)
 			end
 		 else
 			if not arch.front then
-			   print("NO INSTANCE FRONT???")
+			   print("NO INSTANCE FRONT: " .. instance.arch_type)
 			else
 			   local yoff = arch.front.y_off or 0
 			   if (instance.arch_type ~= "manacles") and (instance.arch_type ~= "gorface") and (instance.arch.class ~= "ALCOVE") then
@@ -1826,7 +1852,7 @@ end
 
 -- Searches the same paths as dsb_get_bitmap, loading a sound.
 -- returns: sound
-function dsb_get_sound(name)
+function dsb_get_sound1(name)
    local path = find_path(name, "ogg")
    if not path then
 	  path = find_path(name, "wav")
@@ -1836,6 +1862,21 @@ function dsb_get_sound(name)
 	  end
    end
 
+   if not sounds[name] then
+	  sounds[name] = love.audio.newSource(path, "static")
+   end
+   return sounds[name]
+end
+
+function dsb_get_sound(...)
+   local _,argl = ipairs{...}
+   if argl and #argl <= 1 then return dsb_get_sound1(...) else return dsb_get_sound2(...) end
+end
+
+function dsb_get_sound2(name, relative_path)
+   local path = find_path_noext(relative_path)
+
+   print("PATH: " .. path)
    if not sounds[name] then
 	  sounds[name] = love.audio.newSource(path, "static")
    end
@@ -2077,7 +2118,7 @@ function dsb_add_champion(id, varname, portrait_gfxname, first_name, last_name, 
    champion.varname = varname
    champion.maxload = 100
    champion.portrait_gfxname = portrait_gfxname
-   champion.bitmap = dsb_get_bitmap3(portrait_gfxname)
+   champion.bitmap = _G["gfx"][portrait_gfxname] --dsb_get_bitmap3(portrait_gfxname)
    -- dsb_bitmap_clear(champion.bitmap, {255,0,0})
    champion.first_name = first_name
    champion.last_name = last_name
@@ -2209,6 +2250,10 @@ end
 
 
 function everyone_dead()
+   print("ED: " .. g_next_char)
+   if g_next_char <= 1 then
+	  return false
+   end
    for ppos = 0,g_next_char-1 do
 	  if get_ppos(ppos) and valid_and_alive(ppos_info(ppos).id) then
 		 return false
@@ -2755,6 +2800,7 @@ function dsb_spawn2(id, arch_type, level, x, y, tile_location)
    instance.arch_type = arch_type
    instance.id = id
    id_table[id] = instance
+   print("TYPE: " .. arch_type)
    local arch = dsb_find_arch(id)
 
    instance.arch = arch
@@ -2942,6 +2988,7 @@ end
 -- returns: arch
 function dsb_find_arch(id)
    local at = id_table[id].arch_type
+   print("AT: " .. at)
    local arch = _G["obj"][at]
    return arch
 end
@@ -4518,10 +4565,12 @@ function love.mousepressed(x, y, button, istouch)
 			   load_game(gt_savegames[1])
 			else
 			   load_game(dungeon .. "/dungeon.lua")
-			   dsb_champion_toparty(0, 9)
+
+			   -- dsb_champion_toparty(0, 9)
 			   -- dsb_champion_toparty(1, 10)
 			   -- dsb_champion_toparty(2, 11)
 			   -- dsb_champion_toparty(3, 12)
+			   
 			   remove_champions()
 			end
 			gt_door_opening = true
@@ -4880,7 +4929,9 @@ end
 function load_game(save)
    reset_game()
 
-   dofile(save)
+   local f = assert(loadfile(save))
+   f()
+   -- dofile(save)
 
    g_state = STATE_MOVE
    dsb_write(system_color, "LOADED " .. string.upper(save))
@@ -4888,6 +4939,7 @@ end
 
 
 function start_dungeon(name,save)
+   
    local path = name .. "/startup2"
    if not file_exists(path) then
 	  path = name .. "/startup.lua"
@@ -4897,6 +4949,11 @@ function start_dungeon(name,save)
    for k,v in pairs(lua_manifest) do
 	  dofile(name .. "/" .. v)
    end
+
+   if file_exists(name .. "/objects.lua") then
+	  dofile(name .. "/objects.lua")
+   end
+
 end
 
 

@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include "objects.h"
 #include "render.h"
 #include "champions.h"

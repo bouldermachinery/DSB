@@ -1,5 +1,4 @@
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 
 #ifdef _WIN32
 static unsigned long long int perfreq;

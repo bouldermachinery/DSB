@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include <lauxlib.h>
 #include <lualib.h>
 #include "lproto.h"

@@ -1,4 +1,4 @@
-#include <allegro.h>
+#include <dsballegro.h>
 
 /*
 unsigned long darkdun24(unsigned long x, unsigned long y, unsigned long n) 

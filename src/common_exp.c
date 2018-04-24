@@ -1,5 +1,4 @@
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include <lua.h>
 #include <lauxlib.h>
 #include <lualib.h>

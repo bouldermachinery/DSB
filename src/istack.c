@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include "callstack.h"
 #include "istack.h"
 #include "uproto.h"

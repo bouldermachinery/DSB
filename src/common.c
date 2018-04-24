@@ -1,7 +1,6 @@
 #include <math.h>
 #include <stdio.h>
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include "objects.h"
 #include "global_data.h"
 #include "defs.h"

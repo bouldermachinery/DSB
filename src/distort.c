@@ -1,5 +1,4 @@
-#include <allegro.h>
-#include <winalleg.h>
+#include <dsballegro.h>
 #include <math.h>
 #include "callstack.h"
 #include "distort.h"

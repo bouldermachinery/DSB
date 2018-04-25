@@ -8666,6 +8666,5 @@ delay = 1 },
 dsb_spawnburst_end()
 dsb_set_gameflag(1536)
 EDITOR_FLAGS = 255
-dsb_champion_toparty(0, 9)
 dsb_party_place(0, 1, 4, 2)
 

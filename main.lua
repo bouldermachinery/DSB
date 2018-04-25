@@ -713,8 +713,7 @@ end
 -- Filesystem --
 ----------------
 
-function file_exists(name)
-   print("EXISTS: " .. name)
+function file_exists(name)   
    -- local f=io.open(name,"r")
    local f=love.filesystem.exists(name)
    -- if f~=nil then io.close(f) return true else return false end
@@ -2250,7 +2249,6 @@ end
 
 
 function everyone_dead()
-   print("ED: " .. g_next_char)
    if g_next_char <= 1 then
 	  return false
    end
@@ -2800,7 +2798,7 @@ function dsb_spawn2(id, arch_type, level, x, y, tile_location)
    instance.arch_type = arch_type
    instance.id = id
    id_table[id] = instance
-   print("TYPE: " .. arch_type)
+
    local arch = dsb_find_arch(id)
 
    instance.arch = arch
@@ -2988,7 +2986,6 @@ end
 -- returns: arch
 function dsb_find_arch(id)
    local at = id_table[id].arch_type
-   print("AT: " .. at)
    local arch = _G["obj"][at]
    return arch
 end

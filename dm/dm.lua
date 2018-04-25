@@ -1,7 +1,5 @@
 -- These changes are needed to make the DM dungeon work as expected in DSB
 -- (This file is up to date as of DSB 0.58)
-local inspect = love.filesystem.load('inspect.lua')()
-
 
 -- Doors and false walls open, and counters increment
 -- Just change around the message handlers
@@ -16,19 +14,19 @@ counter_msg_handler[M_DEACTIVATE] = "counter_down"
 generator_msg_handler[M_DEACTIVATE] = "generate_monster"
 shooter_msg_handler[M_DEACTIVATE] = "shooter_shoot"
 
-function print_instance(id)
-   print("PRINTING INSTANCE: " .. id)
-   local gfx = "FALSE"
-   if dsb_get_gfxflag(id, GF_INACTIVE) then
-	  gfx = "TRUE"
-   end
-   print("GFXFLAG: " .. gfx)
-   if exvar[id] then
-	  print("EXVAR: " .. inspect(exvar[id]))
-   end
-   local lev,x,y,pos = dsb_get_coords(id)
-   print("POSITION: " ..lev .. " " .. x .. " " .. y .. " " .. pos)
-end
+-- function print_instance(id)
+--    print("PRINTING INSTANCE: " .. id)
+--    local gfx = "FALSE"
+--    if dsb_get_gfxflag(id, GF_INACTIVE) then
+-- 	  gfx = "TRUE"
+--    end
+--    print("GFXFLAG: " .. gfx)
+--    if exvar[id] then
+-- 	  print("EXVAR: " .. inspect(exvar[id]))
+--    end
+--    local lev,x,y,pos = dsb_get_coords(id)
+--    print("POSITION: " ..lev .. " " .. x .. " " .. y .. " " .. pos)
+-- end
 
 function csb_local_rotate(id, what)
    local lev, x, y, pos = dsb_get_coords(id)

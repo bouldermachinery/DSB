@@ -420,11 +420,11 @@ int WINAPI WinMain (HINSTANCE h_this, HINSTANCE h_prev,
 
     psxf("INITIALIZING LUA");
     initialize_lua();
+
     // this also loads all custom scripts
 
     psxf("IMPORTING LUA DATA");
 	import_lua_constants();
-
 	psxf("IMPORTING SYSTEM GRAPHICS");
     get_sysgfx();
 

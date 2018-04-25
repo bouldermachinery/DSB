@@ -106,7 +106,7 @@ function build {
 				FMOD=win32/fmodex.dll
 				if [ ! -f $FMOD ]; then
 					echo "Error: Please download fmod from https://github.com/alexey-lysiuk/fmodex-zdoom/raw/master/4.26/fmodapi42636win32-installer.exe and place the .dll library here: $FMOD"
-					exit 1
+					return
 				fi
 				cp $FMOD .
 				GCC_FLAGS="-Ifmodex/fmodapi42636win32/api/inc $GCC_FLAGS -L. -lfmodex -Wl,--enable-stdcall-fixup"
@@ -121,7 +121,7 @@ function build {
 				FMOD=linux64/libfmodex64-4.26.36.so
 				if [ ! -f $FMOD ]; then
 					echo "Error: Please download fmod from https://github.com/alexey-lysiuk/fmodex-zdoom/raw/master/4.26/fmodapi42636linux64.tar.gz and place the .so library here: $FMOD"
-					exit 1
+					return
 				fi
 				cp $FMOD libfmodex64.so
 				GCC_FLAGS="-Ifmodex/fmodapi42636linux64/api/inc $GCC_FLAGS -L. -lfmodex64"

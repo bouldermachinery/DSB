@@ -9,6 +9,8 @@ http://www.ojnk.net/dm/dsb (website)
 http://www.dungeon-master.com/forum/viewtopic.php?f=53&t=26508 (forum)
 https://github.com/sparkletwist/DSB (C source)
 
+Packages for this version can be found in the 'dist' directory.
+
 Thanks!
 
 *** DUNGEON STRIKES BACK ***
